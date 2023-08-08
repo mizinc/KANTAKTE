@@ -10,37 +10,29 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.vkontakle.presentation.auth_screen.AuthorizationScreen
+import com.example.vkontakle.presentation.register_screen.RegisterScreen
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-                AuthorizationScreen()
+                Navigation()
             }
         }
     }
 
 sealed class NavController(val route: String){
-    object Hello: NavController("hello")
-    object Googbye: NavController("bye")
+    object AuthorizationScreen: NavController("hello")
+    object RegisterScreen: NavController("bye")
 }
 
 @Composable
 fun Navigation(){
     val controller = rememberNavController()
-    NavHost(controller, NavController.Googbye.route) {
-        composable(NavController.Hello.route) { Hello(controller) }
-        composable(NavController.Googbye.route) {Bye(controller)}
+    NavHost(controller, NavController.RegisterScreen.route) {
+        composable(NavController.AuthorizationScreen.route) { AuthorizationScreen(controller) }
+        composable(NavController.RegisterScreen.route) {RegisterScreen(controller)}
     }
 }
 
-@Composable
-fun Hello(navHostController: NavHostController){
-    Text(text = "hello")
-}
-
-@Composable
-fun Bye(navHostController: NavHostController){
-    Text("bye")
-}

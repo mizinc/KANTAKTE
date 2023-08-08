@@ -9,11 +9,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.vkontakle.R
 import com.example.vkontakle.presentation.auth_screen.components.DefaultVkontakteButton
 
 @Composable
-fun AuthorizationScreen() {
+fun AuthorizationScreen(navHostController: NavHostController) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()

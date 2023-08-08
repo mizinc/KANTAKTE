@@ -37,7 +37,7 @@ fun VKONTAKLETheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composa
 
     MaterialTheme(
         colors = colors,
-        typography = Typography,
+        typography = VkSansTypography,
         shapes = Shapes,
         content = content
     )

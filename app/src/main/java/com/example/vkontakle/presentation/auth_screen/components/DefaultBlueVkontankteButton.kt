@@ -3,6 +3,7 @@ package com.example.vkontakle.presentation.auth_screen.components
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
@@ -16,9 +17,10 @@ fun DefaultVkontakteButton(text: String, color: Color){
     Button(
         modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 10.dp, end = 10.dp)
+                .padding(start = 13.dp, end = 13.dp)
                 .height(45.dp),
         colors = ButtonDefaults.buttonColors(color),
+        shape = RoundedCornerShape(25),
         onClick = { /*TODO*/ }) {
         Text(text = text, color = Color.White)
     }
