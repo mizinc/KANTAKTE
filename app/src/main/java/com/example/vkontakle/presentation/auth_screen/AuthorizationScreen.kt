@@ -1,4 +1,4 @@
-package com.example.vkontakle.presentation.register_screen
+package com.example.vkontakle.presentation.auth_screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -10,10 +10,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.vkontakle.R
-import com.example.vkontakle.presentation.register_screen.components.DefaultVkontakteButton
+import com.example.vkontakle.presentation.auth_screen.components.DefaultVkontakteButton
 
 @Composable
-fun RegisterScreen() {
+fun AuthorizationScreen() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()

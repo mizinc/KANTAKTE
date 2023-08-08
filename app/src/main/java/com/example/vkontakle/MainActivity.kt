@@ -9,14 +9,14 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.vkontakle.presentation.register_screen.RegisterScreen
+import com.example.vkontakle.presentation.auth_screen.AuthorizationScreen
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-                RegisterScreen()
+                AuthorizationScreen()
             }
         }
     }
