@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.vkontakle.NavController
 import com.example.vkontakle.R
 import com.example.vkontakle.presentation.auth_screen.components.DefaultVkontakteButton
 import com.example.vkontakle.ui.theme.VkColor
@@ -30,14 +31,16 @@ fun AuthorizationScreen(navHostController: NavHostController) {
             verticalArrangement = Arrangement.SpaceAround,
             modifier = Modifier.fillMaxSize()
         ) {
-            DefaultVkontakteButton(text = "Зарегистрироваться", color = Color.Green)
+            DefaultVkontakteButton(text = "Зарегистрироваться", color = Color.Green) {
+                navHostController.navigate(NavController.RegisterScreen.route)
+            }
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
                 TextButton(onClick = { /*TODO*/ }) {
                     Text(text = "Уже есть аккаунт?", color = Color.Blue)
                 }
-                DefaultVkontakteButton(text = "Войти", color = VkColor)
+                DefaultVkontakteButton(text = "Войти", color = VkColor) {}
             }
 
         }

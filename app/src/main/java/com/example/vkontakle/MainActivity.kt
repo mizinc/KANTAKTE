@@ -28,7 +28,7 @@ sealed class NavController(val route: String){
 @Composable
 fun Navigation(){
     val controller = rememberNavController()
-    NavHost(controller, NavController.RegisterScreen.route) {
+    NavHost(controller, NavController.AuthorizationScreen.route) {
         composable(NavController.AuthorizationScreen.route) { AuthorizationScreen(controller) }
         composable(NavController.RegisterScreen.route) {RegisterScreen(controller)}
     }

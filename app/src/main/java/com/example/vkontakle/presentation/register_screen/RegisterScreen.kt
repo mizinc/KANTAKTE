@@ -103,8 +103,8 @@ fun RegisterScreen(navHostController: NavHostController) {
             )
         }
         Spacer(modifier = Modifier.height(40.dp))
-        DefaultVkontakteButton(text = "Получить код", color = VkColor)
-        Spacer(modifier = Modifier.height(30.dp))
+        DefaultVkontakteButton(text = "Получить код", color = VkColor) {}
+        Spacer(modifier = Modifier.height(20.dp))
         Text(
             text = "Нажимая на 'Получить код', Вы принимаете",
             color = Color.Gray,

@@ -13,7 +13,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun DefaultVkontakteButton(text: String, color: Color){
+fun DefaultVkontakteButton(
+    text: String,
+    color: Color,
+    onClick: () -> Unit
+){
     Button(
         modifier = Modifier
                 .fillMaxWidth()
@@ -21,7 +25,7 @@ fun DefaultVkontakteButton(text: String, color: Color){
                 .height(45.dp),
         colors = ButtonDefaults.buttonColors(color),
         shape = RoundedCornerShape(20),
-        onClick = { /*TODO*/ }) {
+        onClick = onClick) {
         Text(text = text, color = Color.White)
     }
 }
