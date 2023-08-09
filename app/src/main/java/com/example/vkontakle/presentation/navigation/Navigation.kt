@@ -7,11 +7,13 @@ import androidx.navigation.compose.rememberNavController
 import com.example.vkontakle.presentation.login_screen.LoginScreen
 import com.example.vkontakle.presentation.passport_screen.PassportScreen
 import com.example.vkontakle.presentation.phone_verification_screen.PhoneVerificationScreen
+import com.example.vkontakle.presentation.select_birth_date_screen.SelectBirthDateScreen
 
 sealed class NavController(val route: String){
     object LoginScreen: NavController("login")
     object PhoneVerification: NavController("phone_verification")
     object PassportScreen: NavController("passport")
+    object SelectBirthDateScreen: NavController("birth_date")
 }
 
 @Composable
@@ -21,5 +23,6 @@ fun Navigation(){
         composable(NavController.LoginScreen.route) { LoginScreen(controller) }
         composable(NavController.PhoneVerification.route) { PhoneVerificationScreen(controller) }
         composable(NavController.PassportScreen.route) { PassportScreen(controller)}
+        composable(NavController.SelectBirthDateScreen.route) { SelectBirthDateScreen(controller)}
     }
 }

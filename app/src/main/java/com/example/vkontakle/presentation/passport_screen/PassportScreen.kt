@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.vkontakle.R
 import com.example.vkontakle.presentation.components.DefaultVkontakteButton
+import com.example.vkontakle.presentation.navigation.NavController
 import com.example.vkontakle.ui.theme.QuickSand
 import com.example.vkontakle.ui.theme.VkColor
 
@@ -125,13 +126,15 @@ fun PassportScreen(navHostController: NavHostController) {
                 shape = RoundedCornerShape(20),
                 onClick = {},
                 enabled = false,) {
-                Text(text = "Женский", color = Color.White, fontWeight = FontWeight.Bold)
+                Text(text = "Женский", color = Color.Gray, fontWeight = FontWeight.Bold)
             }
         }
 
         Spacer(modifier = Modifier.height(200.dp))
 
-        DefaultVkontakteButton(text = "Далее", color = VkColor) {}
+        DefaultVkontakteButton(text = "Далее", color = VkColor) {
+            navHostController.navigate(NavController.SelectBirthDateScreen.route)
+        }
 
     }
 }
