@@ -1,4 +1,4 @@
-package com.example.vkontakle.presentation.auth_screen
+package com.example.vkontakle.presentation.login_screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -10,13 +10,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.example.vkontakle.NavController
 import com.example.vkontakle.R
-import com.example.vkontakle.presentation.auth_screen.components.DefaultVkontakteButton
+import com.example.vkontakle.presentation.components.DefaultVkontakteButton
+import com.example.vkontakle.presentation.navigation.NavController
 import com.example.vkontakle.ui.theme.VkColor
 
 @Composable
-fun AuthorizationScreen(navHostController: NavHostController) {
+fun LoginScreen(navHostController: NavHostController) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()

@@ -1,4 +1,4 @@
-package com.example.vkontakle.presentation.auth_screen.components
+package com.example.vkontakle.presentation.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height

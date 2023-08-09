@@ -1,6 +1,5 @@
-package com.example.vkontakle.presentation.register_screen
+package com.example.vkontakle.presentation.phone_verification_screen
 
-import android.widget.Space
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -23,12 +22,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.vkontakle.R
-import com.example.vkontakle.presentation.auth_screen.components.DefaultVkontakteButton
+import com.example.vkontakle.presentation.components.DefaultVkontakteButton
 import com.example.vkontakle.ui.theme.QuickSand
 import com.example.vkontakle.ui.theme.VkColor
 
 @Composable
-fun RegisterScreen(navHostController: NavHostController) {
+fun PhoneVerificationScreen(navHostController: NavHostController) {
     val phoneNumber = remember {
         mutableStateOf("")
     }
@@ -36,7 +35,7 @@ fun RegisterScreen(navHostController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row {
-           IconButton(onClick = { /*TODO*/ }) {
+           IconButton(onClick = { navHostController.navigateUp() }) {
                Icon(
                    Icons.Default.ArrowBack,
                    "back_to_auth",
