@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.vkontakle.presentation.come_up_with_a_password_screen.ComeUpWithAPasswordScreen
 import com.example.vkontakle.presentation.login_screen.LoginScreen
 import com.example.vkontakle.presentation.passport_screen.PassportScreen
 import com.example.vkontakle.presentation.phone_verification_screen.PhoneVerificationScreen
@@ -14,6 +15,7 @@ sealed class NavController(val route: String){
     object PhoneVerification: NavController("phone_verification")
     object PassportScreen: NavController("passport")
     object SelectBirthDateScreen: NavController("birth_date")
+    object ComeUpWithAPasswordScreen: NavController("come_up_a_password")
 }
 
 @Composable
@@ -24,5 +26,6 @@ fun Navigation(){
         composable(NavController.PhoneVerification.route) { PhoneVerificationScreen(controller) }
         composable(NavController.PassportScreen.route) { PassportScreen(controller)}
         composable(NavController.SelectBirthDateScreen.route) { SelectBirthDateScreen(controller)}
+        composable(NavController.ComeUpWithAPasswordScreen.route) { ComeUpWithAPasswordScreen(controller)}
     }
 }

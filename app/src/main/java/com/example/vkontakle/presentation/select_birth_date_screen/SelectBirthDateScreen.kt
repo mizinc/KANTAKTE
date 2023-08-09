@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.vkontakle.presentation.components.DefaultVkontakteButton
 import com.example.vkontakle.presentation.components.VkConnectToolbar
+import com.example.vkontakle.presentation.navigation.NavController
 import com.example.vkontakle.ui.theme.QuickSand
 import com.example.vkontakle.ui.theme.SuperGrayColor
 import com.example.vkontakle.ui.theme.VkColor
@@ -72,7 +73,7 @@ fun SelectBirthDateScreen(navHostController: NavHostController) {
         }
         Spacer(modifier = Modifier.height(450.dp))
         DefaultVkontakteButton(text = "Далее", color = VkColor) {
-
+            navHostController.navigate(NavController.ComeUpWithAPasswordScreen.route)
         }
     }
 }
