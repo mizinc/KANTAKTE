@@ -1,22 +1,24 @@
 package com.example.vkontakle.presentation.select_birth_date_screen
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.vkontakle.presentation.components.DefaultVkontakteButton
 import com.example.vkontakle.presentation.components.VkConnectToolbar
 import com.example.vkontakle.ui.theme.QuickSand
+import com.example.vkontakle.ui.theme.SuperGrayColor
+import com.example.vkontakle.ui.theme.VkColor
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun SelectBirthDateScreen(navHostController: NavHostController) {
     Column(
@@ -48,17 +50,29 @@ fun SelectBirthDateScreen(navHostController: NavHostController) {
             modifier = Modifier.padding(start=25.dp, end=25.dp),
             fontSize = 18.sp
         )
-        Box(
-            modifier = Modifier.fillMaxWidth()
-                .wrapContentSize(Alignment.TopEnd)
+        Spacer(modifier = Modifier.height(20.dp))
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp)
+                .padding(start = 5.dp, end = 5.dp),
+            shape = RoundedCornerShape(20),
+            colors = ButtonDefaults.buttonColors(SuperGrayColor)
         ) {
-            IconButton(onClick = {  }) {
-                Icon(Icons.Default.MoreVert, contentDescription = "Показать меню")
+            Row(
+                modifier = Modifier.fillMaxSize()
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Text(text = "Выберите дату", color = Color.Gray, fontFamily = QuickSand, fontSize = 20.sp, fontWeight = FontWeight.Bold)
+                }
+                Spacer(modifier = Modifier.size(150.dp))
+                Icon(Icons.Default.ArrowBack, "select_date", tint = Color.Gray)
             }
-            ExposedDropdownMenuBox(
-                onExpandedChange = {},
-                expanded = true
-            ) {}
+        }
+        Spacer(modifier = Modifier.height(450.dp))
+        DefaultVkontakteButton(text = "Далее", color = VkColor) {
+
         }
     }
 }
