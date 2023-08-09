@@ -23,6 +23,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.vkontakle.R
 import com.example.vkontakle.presentation.components.DefaultVkontakteButton
+import com.example.vkontakle.presentation.components.VkConnectToolbar
+import com.example.vkontakle.presentation.navigation.NavController
 import com.example.vkontakle.ui.theme.QuickSand
 import com.example.vkontakle.ui.theme.VkColor
 
@@ -34,23 +36,7 @@ fun PhoneVerificationScreen(navHostController: NavHostController) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Row {
-           IconButton(onClick = { navHostController.navigateUp() }) {
-               Icon(
-                   Icons.Default.ArrowBack,
-                   "back_to_auth",
-                   tint = VkColor,
-                   modifier = Modifier.size(30.dp)
-               )
-           }
-               Image(
-                   painter = painterResource(id = R.drawable.vk_connect),
-                   contentDescription = "vk_connect_logo",
-                   modifier = Modifier
-                       .fillMaxWidth()
-                       .padding(end = 50.dp),
-               )
-        }
+        VkConnectToolbar(navHostController = navHostController)
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceAround
@@ -102,7 +88,9 @@ fun PhoneVerificationScreen(navHostController: NavHostController) {
             )
         }
         Spacer(modifier = Modifier.height(40.dp))
-        DefaultVkontakteButton(text = "Получить код", color = VkColor) {}
+        DefaultVkontakteButton(text = "Получить код", color = VkColor) {
+            navHostController.navigate(NavController.PassportScreen.route)
+        }
         Spacer(modifier = Modifier.height(20.dp))
         Text(
             text = "Нажимая на 'Получить код', Вы принимаете",

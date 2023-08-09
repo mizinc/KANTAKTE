@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -26,6 +27,6 @@ fun DefaultVkontakteButton(
         colors = ButtonDefaults.buttonColors(color),
         shape = RoundedCornerShape(20),
         onClick = onClick) {
-        Text(text = text, color = Color.White)
+        Text(text = text, color = Color.White, fontWeight = FontWeight.Bold)
     }
 }

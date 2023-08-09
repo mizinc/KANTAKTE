@@ -32,7 +32,7 @@ fun LoginScreen(navHostController: NavHostController) {
             modifier = Modifier.fillMaxSize()
         ) {
             DefaultVkontakteButton(text = "Зарегистрироваться", color = Color.Green) {
-                navHostController.navigate(NavController.RegisterScreen.route)
+                navHostController.navigate(NavController.PhoneVerification.route)
             }
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
