@@ -20,7 +20,7 @@ fun DefaultVkontakteButton(text: String, color: Color){
                 .padding(start = 13.dp, end = 13.dp)
                 .height(45.dp),
         colors = ButtonDefaults.buttonColors(color),
-        shape = RoundedCornerShape(25),
+        shape = RoundedCornerShape(20),
         onClick = { /*TODO*/ }) {
         Text(text = text, color = Color.White)
     }

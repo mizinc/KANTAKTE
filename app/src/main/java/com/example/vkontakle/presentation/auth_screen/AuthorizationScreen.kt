@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.vkontakle.R
 import com.example.vkontakle.presentation.auth_screen.components.DefaultVkontakteButton
+import com.example.vkontakle.ui.theme.VkColor
 
 @Composable
 fun AuthorizationScreen(navHostController: NavHostController) {
@@ -36,7 +37,7 @@ fun AuthorizationScreen(navHostController: NavHostController) {
                 TextButton(onClick = { /*TODO*/ }) {
                     Text(text = "Уже есть аккаунт?", color = Color.Blue)
                 }
-                DefaultVkontakteButton(text = "Войти", color = Color(0xFF0077FF))
+                DefaultVkontakteButton(text = "Войти", color = VkColor)
             }
 
         }
