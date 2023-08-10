@@ -1,13 +1,17 @@
 package com.example.vkontakle.presentation.profile_screen
 
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -16,6 +20,7 @@ import com.example.vkontakle.R
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.vkontakle.ui.theme.QuickSand
+import com.example.vkontakle.ui.theme.SuperGrayColor
 import com.example.vkontakle.ui.theme.VkColor
 
 
@@ -50,6 +55,143 @@ fun ProfileScreen(navHostController: NavHostController) {
                     }
                 }
             )
-        }
-    ) { Box(modifier = Modifier.padding(it)) }
+        },
+        
+        bottomBar = {
+            BottomNavigation(
+                backgroundColor = Color.White
+            ) {
+                BottomNavigationItem(
+                    selected = false,
+                    onClick = { /*TODO*/ },
+                    icon = { Icon(Icons.Default.Add, contentDescription = "profile_icon") }
+                )
+                BottomNavigationItem(
+                    selected = false,
+                    onClick = { /*TODO*/ },
+                    icon = { Icon(Icons.Default.Add, contentDescription = "profile_icon", tint = Color.Gray) }
+                )
+                BottomNavigationItem(
+                    selected = false,
+                    onClick = { /*TODO*/ },
+                    icon = { Icon(Icons.Default.Add, contentDescription = "profile_icon", tint = Color.Gray) }
+                )
+                BottomNavigationItem(
+                    selected = false,
+                    onClick = { /*TODO*/ },
+                    icon = { Icon(Icons.Default.Add, contentDescription = "profile_icon", tint = Color.Gray) }
+                )
+                BottomNavigationItem(
+                    selected = true,
+                    onClick = { /*TODO*/ },
+                    enabled = true,
+                    icon = { Icon(Icons.Default.Add, contentDescription = "profile_icon", tint = Color.Gray) }
+                )
+            }
+        },
+    ) {
+        Box(modifier = Modifier
+            .padding(it)
+            .padding(top = 10.dp)) {
+            Column {
+                Row() {
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Image(
+                        painter = painterResource(id = R.drawable.add_photo_image),
+                        contentDescription = "add_photo_image",
+                        modifier = Modifier
+                            .clip(CircleShape)
+                            .clickable { }
+                            .size(80.dp)
+                    )
+                    Spacer(modifier = Modifier.width(7.dp))
+                    Column {
+                        Text(
+                            text = "Артем Соломатов",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 25.sp,
+                            fontFamily = QuickSand
+                        )
+                        Text(text = "Расскажите о себе", color = VkColor, fontFamily = QuickSand, fontSize = 20.sp)
+                        Row {
+                            Text(text = "online", fontFamily = QuickSand, color=Color.Gray, fontSize = 18.sp)
+                            Icon(
+                                painter = painterResource(id = R.drawable.phone),
+                                contentDescription = "phone",
+                                modifier = Modifier.size(18.dp),
+                                tint = Color.Gray
+                            )
+                        }
+
+                    }
+                }
+                Button(
+                    onClick = { /*TODO*/ },
+                    colors = ButtonDefaults.buttonColors(SuperGrayColor),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 10.dp, end = 10.dp)
+                ) {
+                    Text(text = "Редактировать", fontFamily = QuickSand, color = VkColor, fontWeight = FontWeight.Bold)
+                }
+                Row(horizontalArrangement = Arrangement.SpaceAround, modifier = Modifier.fillMaxWidth()) {
+                    IconButton(onClick = { /*TODO*/ }) {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            Icon(painter = painterResource(id = R.drawable.baseline_photo_camera_24), contentDescription = "camera", tint= VkColor)
+                            Text(text = "История", color = VkColor)
+                        }
+                    }
+                    IconButton(onClick = { /*TODO*/ }) {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            Icon(painter = painterResource(id = R.drawable.pencil), contentDescription = "pencil", tint= VkColor)
+                            Text(text = "Запись", color = VkColor)
+                        }
+                    }
+                    IconButton(onClick = { /*TODO*/ }) {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            Icon(painter = painterResource(id = R.drawable.peizash), contentDescription = "пейзаж", tint= VkColor)
+                            Text(text = "фото", color = VkColor)
+                        }
+                    }
+                    IconButton(onClick = { /*TODO*/ }) {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            Icon(painter = painterResource(id = R.drawable.twitch), contentDescription = "эфир", tint= VkColor)
+                            Text(text = "Трансляция", color = VkColor)
+                        }
+                    }
+                }
+                Spacer(modifier = Modifier.height(5.dp))
+                Card {
+                    Column(
+                        verticalArrangement = Arrangement.SpaceBetween,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        TextButton(onClick = { /*TODO*/ }) {
+                            Row() {
+                                Icon(painter = painterResource(id = R.drawable.school), contentDescription = "school", tint = VkColor)
+                                Spacer(modifier = Modifier.width(5.dp))
+                                Text(text = "Укажите место учёбы", color = VkColor, fontFamily = QuickSand, fontWeight = FontWeight.Bold)
+                            }
+                        }
+                        TextButton(onClick = { /*TODO*/ }) {
+                            Row() {
+                                Icon(painter = painterResource(id = R.drawable.job), contentDescription = "school", tint = VkColor)
+                                Spacer(modifier = Modifier.width(5.dp))
+                                Text(text = "Укажите место работы", color = VkColor, fontFamily = QuickSand, fontWeight = FontWeight.Bold)
+                            }
+                        }
+                        TextButton(onClick = { /*TODO*/ }) {
+                            Row() {
+                                Icon(painter = painterResource(id = R.drawable.baseline_info_24), contentDescription = "school", tint = VkColor)
+                                Spacer(modifier = Modifier.width(5.dp))
+                                Text(text = "Подробная информация", color = VkColor, fontFamily = QuickSand, fontWeight = FontWeight.Bold)
+                            }
+                        }
+                    }
+                }
+                Spacer(modifier = Modifier.height(5.dp))
+                Text(text = "Фотографии", fontSize = 21.sp, modifier = Modifier.padding(start = 10.dp))
+            }
+        } 
+    }
 }
