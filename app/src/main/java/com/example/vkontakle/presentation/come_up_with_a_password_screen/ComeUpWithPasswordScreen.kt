@@ -21,6 +21,7 @@ import androidx.navigation.NavHostController
 import com.example.vkontakle.R
 import com.example.vkontakle.presentation.components.DefaultVkontakteButton
 import com.example.vkontakle.presentation.components.VkConnectToolbar
+import com.example.vkontakle.presentation.navigation.NavController
 import com.example.vkontakle.ui.theme.QuickSand
 import com.example.vkontakle.ui.theme.VkColor
 
@@ -68,7 +69,9 @@ fun ComeUpWithAPasswordScreen(navHostController: NavHostController) {
         PasswordTextField(textValue = comeUpPassword, flag = passwordVisibility, icon = icon, label = "Введите пароль")
         PasswordTextField(textValue = tryAgainPassword, flag = passwordVisibility, icon = icon, label = "Повторите пароль")
         Spacer(modifier = Modifier.height(20.dp))
-        DefaultVkontakteButton(text = "Далее", color = VkColor) {}
+        DefaultVkontakteButton(text = "Далее", color = VkColor) {
+            navHostController.navigate(NavController.MainMenuScreen.route)
+        }
     }
 }
 
