@@ -12,7 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawWithContent
+import androidx.compose.ui.graphics.BlendMode
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -190,8 +195,67 @@ fun ProfileScreen(navHostController: NavHostController) {
                     }
                 }
                 Spacer(modifier = Modifier.height(5.dp))
-                Text(text = "Фотографии", fontSize = 21.sp, modifier = Modifier.padding(start = 10.dp))
+                GetPhotoCard()
             }
         } 
     }
+}
+
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+private fun GetPhotoCard() {
+    Card (
+        onClick = {}
+       )
+    {
+        Column {
+            Text(text = "Фотографии", fontSize = 21.sp, modifier = Modifier.padding(start = 10.dp))
+            Box(contentAlignment = Alignment.Center) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center
+                ) {
+
+                    Square()
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Square()
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Square()
+                }
+                Row {
+                    Icon(painter = painterResource(id = R.drawable.baseline_photo_camera_24), contentDescription = null, tint = VkColor)
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Text(text = "Добавить фото", fontSize = 20.sp, color = VkColor, fontFamily = QuickSand)
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun Square() {
+    Image(
+        painterResource(id = R.drawable.gray_image),
+        contentDescription = null,
+        contentScale = ContentScale.Crop,
+        modifier = Modifier
+            // Workaround to enable alpha compositing
+            .graphicsLayer { alpha = 0.99f }
+            .drawWithContent {
+                val colors = listOf(
+                    Color.Black,
+                    Color.Transparent
+                )
+                drawContent()
+                drawRect(
+                    brush = Brush.verticalGradient(colors),
+                    blendMode = BlendMode.DstIn
+                )
+            }
+            .size(125.dp)
+    )
 }
