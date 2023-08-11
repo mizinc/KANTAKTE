@@ -6,8 +6,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -69,28 +67,28 @@ fun ProfileScreen(navHostController: NavHostController) {
                 BottomNavigationItem(
                     selected = false,
                     onClick = { /*TODO*/ },
-                    icon = { Icon(Icons.Default.Add, contentDescription = "profile_icon") }
+                    icon = { Icon(painter = painterResource(id = R.drawable.news), contentDescription = "profile_icon") }
                 )
                 BottomNavigationItem(
                     selected = false,
                     onClick = { /*TODO*/ },
-                    icon = { Icon(Icons.Default.Add, contentDescription = "profile_icon", tint = Color.Gray) }
+                    icon = { Icon(painter = painterResource(id = R.drawable.pizza), contentDescription = "profile_icon", tint = Color.Gray) }
                 )
                 BottomNavigationItem(
                     selected = false,
                     onClick = { /*TODO*/ },
-                    icon = { Icon(Icons.Default.Add, contentDescription = "profile_icon", tint = Color.Gray) }
+                    icon = { Icon(painter = painterResource(id = R.drawable.chat), contentDescription = "profile_icon", tint = Color.Gray) }
                 )
                 BottomNavigationItem(
                     selected = false,
                     onClick = { /*TODO*/ },
-                    icon = { Icon(Icons.Default.Add, contentDescription = "profile_icon", tint = Color.Gray) }
+                    icon = { Icon(painter = painterResource(id = R.drawable.group), contentDescription = "profile_icon", tint = Color.Gray) }
                 )
                 BottomNavigationItem(
                     selected = true,
                     onClick = { /*TODO*/ },
                     enabled = true,
-                    icon = { Icon(Icons.Default.Add, contentDescription = "profile_icon", tint = Color.Gray) }
+                    icon = { Icon(painter = painterResource(id = R.drawable.profile), contentDescription = "profile_icon", tint = Color.Gray) }
                 )
             }
         },

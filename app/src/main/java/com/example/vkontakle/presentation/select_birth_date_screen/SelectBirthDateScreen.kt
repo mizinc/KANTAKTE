@@ -3,16 +3,16 @@ package com.example.vkontakle.presentation.select_birth_date_screen
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.vkontakle.R
 import com.example.vkontakle.presentation.components.DefaultVkontakteButton
 import com.example.vkontakle.presentation.components.VkConnectToolbar
 import com.example.vkontakle.presentation.navigation.NavController
@@ -68,7 +68,7 @@ fun SelectBirthDateScreen(navHostController: NavHostController) {
                     Text(text = "Выберите дату", color = Color.Gray, fontFamily = QuickSand, fontSize = 20.sp, fontWeight = FontWeight.Bold)
                 }
                 Spacer(modifier = Modifier.size(150.dp))
-                Icon(Icons.Default.ArrowBack, "select_date", tint = Color.Gray)
+                Icon(painter = painterResource(id = R.drawable.down), "select_date", tint = Color.Gray)
             }
         }
         Spacer(modifier = Modifier.height(450.dp))
