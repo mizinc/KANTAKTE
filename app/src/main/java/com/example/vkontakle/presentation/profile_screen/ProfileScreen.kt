@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.example.vkontakle.R
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.vkontakle.presentation.navigation.NavController
 import com.example.vkontakle.ui.theme.QuickSand
 import com.example.vkontakle.ui.theme.SuperGrayColor
 import com.example.vkontakle.ui.theme.VkColor
@@ -76,7 +77,9 @@ fun ProfileScreen(navHostController: NavHostController) {
                 )
                 BottomNavigationItem(
                     selected = false,
-                    onClick = { /*TODO*/ },
+                    onClick = {
+                              navHostController.navigate(NavController.MessendgerScreen.route)
+                    },
                     icon = { Icon(painter = painterResource(id = R.drawable.chat), contentDescription = "profile_icon", tint = Color.Gray) }
                 )
                 BottomNavigationItem(
